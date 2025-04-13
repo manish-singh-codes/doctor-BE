@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: doctor-on-call-api
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run compile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENSSL_CONF
+        value: /dev/null
+    buildFilter:
+      paths:
+        - package.json
+        - package-lock.json
+        - src/**
+        - prisma/**
+        - tsconfig.json
+        - template/** 
