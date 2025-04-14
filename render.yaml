@@ -3,12 +3,14 @@ services:
     name: doctor-on-call-api
     env: node
     buildCommand: npm install && npm run build
-    startCommand: npm run compile
+    startCommand: npm run render-start
     envVars:
       - key: NODE_ENV
         value: production
       - key: OPENSSL_CONF
         value: /dev/null
+      - key: PRISMA_CLI_QUERY_ENGINE_TYPE
+        value: binary
     buildFilter:
       paths:
         - package.json
