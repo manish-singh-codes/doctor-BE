@@ -7,7 +7,7 @@ const clientUrl =  process.env.CLIENT_URL
 
 export default {
     env: process.env.NODE_ENV,
-    port: process.env.PORT,
+    port: process.env.PORT || 5050,
     default_doctor_pass: process.env.DOCTOR_PASS,
     clientUrl: clientUrl,
     jwt: {
